@@ -1,6 +1,10 @@
 {
   "name": "react-credit-card-a11y",
-  "keywords": ["react", "credit-card", "a11y"],
+  "keywords": [
+    "react",
+    "credit-card",
+    "a11y"
+  ],
   "version": "1.0.4",
   "description": "React credit card component with accessibility",
   "license": "ISC",
@@ -32,7 +36,8 @@
     "react-dom": "^16.0.0 || ^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "clsx": "^1.1.1"
+    "clsx": "^1.1.1",
+    "react-aria": "^3.22.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "6.5.10",
