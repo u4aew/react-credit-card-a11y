@@ -1,11 +1,20 @@
 import React from 'react';
-import { useTextField } from 'react-aria';
+import { AriaTextFieldProps, useTextField } from 'react-aria';
 
-function Input(props) {
+type InputProps = AriaTextFieldProps & {
+  label: string;
+  description?: string;
+  errorMessage?: string;
+  forwardedRef?: React.RefObject<HTMLInputElement>;
+};
+
+function Input(props: InputProps) {
   const { label } = props;
   const ref = React.useRef();
-  const { labelProps, inputProps, descriptionProps, errorMessageProps } = useTextField(props, ref);
-
+  const { labelProps, inputProps, descriptionProps, errorMessageProps } = useTextField(
+    props,
+    props.forwardedRef ? props.forwardedRef : ref,
+  );
   return (
     <div style={{ display: 'flex', flexDirection: 'column', width: 200 }}>
       <label {...labelProps}>{label}</label>
